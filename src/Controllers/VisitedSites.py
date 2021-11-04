@@ -1,7 +1,7 @@
 # Controller to handle request over VisitedSite resource
 
 from flask_restful import Resource, reqparse
-from src.UseCases.GetVisitedSites import GetVisitedSites
+from src.UseCases.GetVisitedSites import FindVisitedSitesByQuery
 from src.UseCases.SaveVisitedSite import SaveVisitedSite
 
 # Parser for POST requests
@@ -18,7 +18,7 @@ get_parser.add_argument('query', type=str, required=True)
 
 
 class VisitedSites(Resource):
-    def __init__(self, save_visited_site: SaveVisitedSite, get_visited_sites: GetVisitedSites):
+    def __init__(self, save_visited_site: SaveVisitedSite, get_visited_sites: FindVisitedSitesByQuery):
         self.__save_visited_site = save_visited_site
         self.__get_visited_sites = get_visited_sites
 
