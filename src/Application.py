@@ -22,5 +22,5 @@ api = Api(app)
 
 # Bind the controllers to the routes
 api.add_resource(Websites,
-                 '/search_api/websites',
+                 '/search_api/v1/websites',
                  resource_class_args=[index_website, find_websites_by_query])
