@@ -3,9 +3,9 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 
-from src.Controllers.VisitedSites import VisitedSites
-from src.UseCases.GetVisitedSites import find_visited_sites_by_query
-from src.UseCases.SaveVisitedSite import save_visited_site
+from src.Controllers.Websites import Websites
+from src.UseCases.FindWebsitesByQuery import find_websites_by_query
+from src.UseCases.IndexWebsite import index_website
 
 app = Flask(__name__)
 
@@ -21,5 +21,6 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
 
 # Bind the controllers to the routes
-api.add_resource(VisitedSites, '/api/visited_sites',
-                 resource_class_args=[save_visited_site, find_visited_sites_by_query])
+api.add_resource(Websites,
+                 '/search_api/websites',
+                 resource_class_args=[index_website, find_websites_by_query])
