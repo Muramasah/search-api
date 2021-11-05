@@ -16,7 +16,7 @@ app.config.update(
 )
 
 # Allow cross-origin requests, must be removed for security reasons
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/search_api/v1/*": {"origins": "*"}})
 
 api = Api(app)
 
