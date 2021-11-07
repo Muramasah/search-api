@@ -14,7 +14,7 @@ class IndexWebsite:
                               title=visited_site_dto['title']
                               )
 
-        self.__search_engine.index_visited_site(new_website)
+        self.__search_engine.index_or_updates_visited_site(new_website)
 
 
 index_website = IndexWebsite(search_engine_service)

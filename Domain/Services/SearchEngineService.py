@@ -21,12 +21,17 @@ class SearchEngineService:
     def __init__(self):
         self.index = self.__create_index()
 
-    def index_visited_site(self, visited_site: Website):
+    def index_or_updates_visited_site(self, visited_site: Website):
         writer = self.index.writer()
-
-        writer.add_document(url=visited_site.url,
-                            title=visited_site.title,
-                            text=visited_site.text)
+        '''
+        "If no existing document matches the unique fields of the document
+        you’re updating, update_document acts just like add_document."
+        ref:
+        https://whoosh.readthedocs.io/en/latest/indexing.html#updating-documents
+        '''
+        writer.update_document(url=visited_site.url,
+                               title=visited_site.title,
+                               text=visited_site.text)
         writer.commit()
 
     def find_all_by_query(self, query: str):
@@ -57,7 +62,7 @@ class SearchEngineService:
 
     def __create_index(self):
         schema = Schema(title=TEXT(stored=True),
-                        url=ID(stored=True),
+                        url=ID(stored=True, unique=True),
                         text=TEXT)
 
         if not os.path.exists("./index"):
