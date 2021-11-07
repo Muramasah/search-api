@@ -44,8 +44,4 @@ class Websites(Resource):
         # no other need for it.
         visited_sites = self.__find_sites_by_query.execute(arguments)
 
-        print(f'{arguments} /n{visited_sites }')
-
-        visited_site_dtos = []
-
-        return visited_site_dtos, 200
+        return visited_sites, 200
