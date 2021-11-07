@@ -1,6 +1,6 @@
+from Domain.UseCases.FindWebsitesByQuery import FindWebsitesByQuery
+from Domain.UseCases.IndexWebsite import IndexWebsite
 from flask_restful import Resource, reqparse
-from src.UseCases.FindWebsitesByQuery import FindWebsitesByQuery
-from src.UseCases.IndexWebsite import IndexWebsite
 
 # Parser for PUT requests
 put_parser = reqparse.RequestParser(bundle_errors=True)

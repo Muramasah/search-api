@@ -1,7 +1,7 @@
 
 import os
 
-from src.Models.Website import Website
+from Domain.Models.Website import Website
 from whoosh.fields import ID, TEXT, Schema
 from whoosh.index import create_in, open_dir
 from whoosh.qparser import QueryParser

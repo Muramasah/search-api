@@ -3,9 +3,9 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 
-from src.Controllers.Websites import Websites
-from src.UseCases.FindWebsitesByQuery import find_websites_by_query
-from src.UseCases.IndexWebsite import index_website
+from Application.Controllers.Websites import Websites
+from Domain.UseCases.FindWebsitesByQuery import find_websites_by_query
+from Domain.UseCases.IndexWebsite import index_website
 
 app = Flask(__name__)
 

@@ -1,7 +1,7 @@
 
 
-from src.Services.SearchEngineService import (SearchEngineService,
-                                              search_engine_service)
+from Domain.Services.SearchEngineService import (SearchEngineService,
+                                                 search_engine_service)
 
 
 class FindWebsitesByQuery:
@@ -9,7 +9,8 @@ class FindWebsitesByQuery:
         self.__search_engine = search_engine
 
     def execute(self, filter_dto: dict) -> list:
-        website_dtos = self.__search_engine.find_all_by_query(filter_dto['query'])
+        website_dtos = self.__search_engine.find_all_by_query(
+            filter_dto['query'])
 
         return website_dtos
 

@@ -1,6 +1,6 @@
-from src.Models.Website import Website
-from src.Services.SearchEngineService import (SearchEngineService,
-                                              search_engine_service)
+from Domain.Models.Website import Website
+from Domain.Services.SearchEngineService import (SearchEngineService,
+                                                 search_engine_service)
 
 
 class IndexWebsite:
@@ -10,9 +10,9 @@ class IndexWebsite:
     def execute(self, visited_site_dto: dict):
         # The VisitedSite instation should be in a factory service
         new_website = Website(text=visited_site_dto['text'],
-                                       url=visited_site_dto['url'],
-                                       title=visited_site_dto['title']
-                                       )
+                              url=visited_site_dto['url'],
+                              title=visited_site_dto['title']
+                              )
 
         self.__search_engine.index_visited_site(new_website)
 
