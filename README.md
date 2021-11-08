@@ -4,7 +4,7 @@ WER Search API is a python backend service which provides the means to perform t
 
 ## Project building philosophy
 
-The project was developed focused on delivery a ___proof of concept___, because of that, there are no tests and it code is softly typed. The philosophy behind this decision is that typing and test code that relies on little used libraries, and discover how to implement a solution that it was never approached, will slow down the development by adding unknowns and extending the code base that will work with those unknowns.
+The project was developed focused on delivery a ___proof of concept___, because of that, there are no tests and it code is softly typed. The philosophy behind this decision is that typing and test code that relies on little used libraries, and discover how to implement a solution that it was never approached, will slowdown the development by adding unknowns and extending the code base that will work with those unknowns.
 
 The next first step to build a scalable solution will be adding tests.
 
