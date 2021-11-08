@@ -1,5 +1,5 @@
 
-from src.Application import app
+from Application import app
 
 if __name__ == '__main__':
     host_name = 'localhost'
