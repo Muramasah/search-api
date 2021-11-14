@@ -15,7 +15,7 @@ class SearchEngineService:
 
     In order to remove the communication with the infrastructure, this service
     should have a dependency with a infrastructure service, like a repository.
-    This was not done because it was not necessary for a prove of concept.
+    This was not done because it was not necessary for a proof of concept.
     '''
 
     def __init__(self):
