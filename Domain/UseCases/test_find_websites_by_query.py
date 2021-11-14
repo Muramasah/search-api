@@ -17,15 +17,17 @@ class TestFindWebsitesByQuery(TestCase):
         return super().setUp()
 
     def test_execute_should_return_website_dtos(self):
+        # Here there are our "given" inputs
         filter_dto = {'query': 'query'}
         result_dtos = {'title': 'title', 'url': 'url'}
         self.mocked_search_engine.find_all_by_query.return_value = result_dtos
 
+        # "when" this process is executed
         returned_result_dtos = self.use_case.execute(filter_dto)
 
-        # Here we are assuring that the repository is called with the query
+        # "Then", we are assuring that the repository is called with the query
         self.mocked_search_engine.find_all_by_query.assert_called_with(
             filter_dto['query'])
-        # Here we are assuring that the use case is returning the repository 
+        # We are assuring that the use case is returning the repository
         # result.
         self.assertDictEqual(returned_result_dtos, result_dtos)
