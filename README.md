@@ -1,4 +1,4 @@
-<h1 align="center">Web Expeditious Retrieval - Search API</h1>
+<h1 align="center">Search API</h1>
 
 WER Search API is a python backend service which provides the means to perform text-based search over the unified navigation history
 
